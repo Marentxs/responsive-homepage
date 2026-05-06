@@ -3,12 +3,6 @@ body {
   padding: 1rem;
 }
 
-@media (max-width: 600px) {
-  body {
-    margin: 8px;
-  }
-}
-
 h1,
 h2,
 h3 {
@@ -17,13 +11,14 @@ h3 {
 
 .header-image {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .header-image img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  margin: 0 auto;
+  max-height: 100%;
+  width: auto;
 }
 
 .name {
@@ -37,7 +32,7 @@ h3 {
 
 .header-icons {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   gap: 1.5rem;
 }
 
@@ -47,6 +42,7 @@ h3 {
 
 header {
   margin-bottom: 4rem;
+  display: flex;
 }
 
 .card-header {
@@ -66,12 +62,10 @@ header {
 
 .project-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
 }
 
 .project-card img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -97,4 +91,67 @@ footer img {
 .footer-text {
   padding: 1rem;
   margin-bottom: 2rem;
+}
+
+.section-cards {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 2560px) {
+  .section-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .header-text {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+  }
+
+  .header-image img {
+    max-height: 800px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-image img {
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    margin: 8px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .header-text {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .section-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header-icons {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .header-image {
+    height: 15rem;
+  }
+
+  .header-image img {
+    max-height: 300px;
+  }
 }
