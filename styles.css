@@ -149,9 +149,19 @@ footer img {
 
   .header-image {
     height: 15rem;
+    display: flex;
+    justify-content: center;
+
+    align-items: flex-end;
   }
 
   .header-image img {
     max-height: 300px;
+  }
+
+  .name {
+    display: flex;
+    max-width: 268px;
+    justify-content: center;
   }
 }
