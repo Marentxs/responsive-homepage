@@ -4,9 +4,52 @@ body {
   font-family: "Courier New", "American Typewriter", monospace;
 }
 
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: "Cooper Black", "Courier New", monospace;
+  letter-spacing: 2px;
+  color: #c85a17;
+}
+
+h2 {
+  padding-bottom: 2rem;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Cooper Black", monospace;
+  font-weight: bold;
+  color: #5c2e0a;
+  font-size: 1.3em;
+}
+
+/*Layout*/
+
 main {
   margin: 24px;
   padding: 1rem;
+}
+
+header {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: #e8a87c;
+  padding: 1rem;
+  border-top: 6px solid #c85a17;
+  color: #4a3b2c;
+}
+
+.section-cards {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 .angled-line {
@@ -21,14 +64,7 @@ main {
   z-index: -1;
 }
 
-h1,
-h2,
-h3 {
-  text-align: center;
-  font-family: "Cooper Black", "Courier New", monospace;
-  letter-spacing: 2px;
-  color: #c85a17;
-}
+/*Components*/
 
 .header-image {
   position: relative;
@@ -42,6 +78,48 @@ h3 {
   margin: 0 auto;
   max-height: 100%;
   width: auto;
+}
+
+.project-card {
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+  border: 2px solid #e8a87c;
+  background-color: #fffaf2;
+  transition: transform 0.2s ease;
+}
+
+.project-card img {
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 4px solid #f3d2b5;
+}
+
+.project-card p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+}
+
+.project-card:hover,
+.header-icons img:hover,
+.card-header-icons svg:hover {
+  transform: translate(-3px, -3px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px dotted #e8a87c;
+  padding-bottom: 0.5rem;
+}
+
+.card-header-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.card-header-icons svg {
+  width: 1.5rem;
+  color: #c85a17;
 }
 
 .name {
@@ -67,55 +145,6 @@ h3 {
   filter: drop-shadow(2px 2px 0 #c85a17);
 }
 
-header {
-  margin-bottom: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px dotted #e8a87c;
-  padding-bottom: 0.5rem;
-}
-
-.card-header-icons svg {
-  width: 1.5rem;
-  color: #c85a17;
-}
-
-.card-header-icons {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.project-card {
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
-  border: 2px solid #e8a87c;
-  background-color: #fffaf2;
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover,
-.header-icons img:hover,
-.card-header-icons svg:hover {
-  transform: translate(-3px, -3px);
-}
-
-.project-card img {
-  width: 100%;
-  object-fit: cover;
-  border-bottom: 4px solid #f3d2b5;
-}
-
-.project-card p {
-  margin: 0;
-  font-family: "Courier New", monospace;
-}
-
 .card-content {
   padding: 1rem;
   padding-top: 0;
@@ -125,11 +154,10 @@ header {
   padding-top: 1rem;
 }
 
-footer {
-  background-color: #e8a87c;
+.footer-text {
   padding: 1rem;
-  border-top: 6px solid #c85a17;
-  color: #4a3b2c;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
 }
 
 footer img {
@@ -139,29 +167,12 @@ footer img {
   filter: grayscale(0.2) sepia(0.3);
 }
 
-.footer-text {
-  padding: 1rem;
-  font-family: "Courier New", monospace;
-  font-weight: bold;
+header img,
+footer img {
+  filter: sepia(0.5) contrast(1.1);
 }
 
-.section-cards {
-  display: grid;
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-h2 {
-  padding-bottom: 2rem;
-}
-
-h3 {
-  margin: 0;
-  font-family: "Cooper Black", monospace;
-  font-weight: bold;
-  color: #5c2e0a;
-  font-size: 1.3em;
-}
+/*Media Queries*/
 
 @media (max-width: 2560px) {
   .section-cards {
@@ -201,6 +212,7 @@ h3 {
   }
 
   footer .header-icons {
+    padding-top: 0.5rem;
     justify-content: start;
   }
 
@@ -305,9 +317,4 @@ h3 {
   h3 {
     justify-self: center;
   }
-}
-
-header img,
-footer img {
-  filter: sepia(0.5) contrast(1.1);
 }
